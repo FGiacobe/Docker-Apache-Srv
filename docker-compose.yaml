@@ -1,0 +1,10 @@
+services:
+  apache:
+    image: httpd:alpine3.22
+    container_name: apache-srv
+    ports:
+      - 80:80
+    volumes:
+      - ./www:/usr/local/apache2/htdocs
+    command: >
+      httpd-foreground -c "ServerName localhost"
